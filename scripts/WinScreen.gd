@@ -21,12 +21,15 @@ func _ready():
 		PlayerInfo.max_lvl = Level.current_lvl
 		
 	PlayerInfo.save_player()
+	$TimeR.text = "Recorde\n" + str(PlayerInfo.scores_time[Level.current_lvl])
+	$MovesR.text = "Recorde\n" + str(PlayerInfo.scores_move[Level.current_lvl])
 	
 	var prompt = "Level " + str(Level.current_lvl + 1)
 	$Level.text = prompt
 	prompt = "Tempo\n" + str(time)
 	$Time.text = prompt
-	prompt = "Movimentos\n" + str(moves)
+	#$Time.add_color_override("default_color", Color("#FF0000"))
+	prompt = "Jogadas\n" + str(moves)
 	$Moves.text = prompt
 	
 	$Wow.play()
