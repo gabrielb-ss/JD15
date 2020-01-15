@@ -1,6 +1,7 @@
 extends Node2D
 
 func _on_Button_pressed():
+	
 	get_tree().change_scene("res://scenes/Grid.tscn")
 
 func _on_TrashCan_pressed():
@@ -11,7 +12,7 @@ func _on_Mute_toggled(button_pressed):
 	if $CenterContainer/Mute.get_draw_mode() == 0:
 		Level.get_node("Music").stop()
 		$CenterContainer/Mute.icon = load("res://icons/mute.png")
-	elif $CenterContainer/Mute.get_draw_mode() == 1:
+	else:
 		Level.get_node("Music").play()
 		$CenterContainer/Mute.icon = load("res://icons/audio.png")
 		

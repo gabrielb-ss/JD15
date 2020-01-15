@@ -1,10 +1,13 @@
 extends Node2D
 
-var teste = 56
+var teste = []
 
 func _ready():
-	var sprites = "ABCDEFGHIJKLMNO-"
-	print(sprites[1])
+	teste.append(Vector2(1,1))
+	if teste[2] == null:
+		print("ha")
+	
+	print(teste)
 	
 	pass # Replace with function body.
 

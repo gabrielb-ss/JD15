@@ -16,12 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="jogoPRS"
-run/main_scene="res://scenes/MainMenu.tscn"
+run/main_scene="res://scenes/Login.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Level="*res://scenes/Level.tscn"
+PlayerInfo="*res://scenes/PlayerInfo.tscn"
 
 [display]
 

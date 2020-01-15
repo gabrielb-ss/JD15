@@ -1,7 +1,7 @@
 extends Node2D
 
 const level_info = [[3,200,200], [3, 150, 150], [4, 200, 200], [4, 150, 150]]
-const save_path = "res://saves/save.jason"
+const save_path = "res://save.jason"
 var current_lvl = load_game()
 var side_size = level_info[current_lvl][0]
 var time_limit = level_info[current_lvl][1]

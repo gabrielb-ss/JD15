@@ -57,11 +57,11 @@ scroll_active = false
 [node name="Time" type="RichTextLabel" parent="."]
 margin_left = 256.0
 margin_top = 192.0
-margin_right = 512.0
+margin_right = 576.0
 margin_bottom = 384.0
 custom_fonts/normal_font = SubResource( 2 )
 text = "Tempo
-100"
+100 "
 scroll_active = false
 
 [node name="Moves" type="RichTextLabel" parent="."]

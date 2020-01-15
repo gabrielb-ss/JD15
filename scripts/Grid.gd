@@ -76,7 +76,7 @@ func set_tile_position(var t_sprite, var new_pos, var old_pos):
 	tile_position[translated] = t_sprite
 #	print(t_sprite, " ", old_pos, " ", new_pos, " ", translated)
 	Level.tile_position = tile_position
-	print(tile_position)
+#	print(tile_position)
 	is_win()	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 
 func translate(v2):
