@@ -50,17 +50,17 @@ func random_str(var side):
 	for i in range(0, dimention - 1):
 		rng.randomize()
 		if side == 3:
-			r_str = "ABCDEFG-H"
-#			idx = rng.randi_range(0, sprites3x3.size() - 1)
-#			r_str += sprites3x3[idx]
-#			sprites3x3.erase(sprites3x3[idx])
+#			r_str = "ABCDEFG-H"
+			idx = rng.randi_range(0, sprites3x3.size() - 1)
+			r_str += sprites3x3[idx]
+			sprites3x3.erase(sprites3x3[idx])
 		elif side == 4:
-			r_str = "ABCDEFGHIJKLMN-O"
-#			idx = rng.randi_range(0, sprites4x4.size() - 1)
-#			r_str += sprites4x4[idx]
-#			sprites4x4.erase(sprites4x4[idx])
-##
-#	r_str += "-"
+#			r_str = "ABCDEFGHIJKLMN-O"
+			idx = rng.randi_range(0, sprites4x4.size() - 1)
+			r_str += sprites4x4[idx]
+			sprites4x4.erase(sprites4x4[idx])
+#
+	r_str += "-"
 	#print(r_str)
 	return r_str
 

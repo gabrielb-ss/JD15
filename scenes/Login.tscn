@@ -24,10 +24,10 @@ __meta__ = {
 }
 
 [node name="LineEdit" type="LineEdit" parent="."]
-margin_left = 256.0
+margin_left = 192.0
 margin_top = 496.0
-margin_right = 512.0
-margin_bottom = 528.0
+margin_right = 576.0
+margin_bottom = 544.0
 expand_to_text_length = true
 clear_button_enabled = true
 placeholder_text = "Escolha um nome de usuário"
