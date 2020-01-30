@@ -173,7 +173,6 @@ icon = ExtResource( 8 )
 flat = true
 
 [node name="CenterContainer" type="VBoxContainer" parent="."]
-editor/display_folded = true
 margin_top = 768.0
 margin_right = 112.0
 margin_bottom = 992.0
@@ -325,7 +324,6 @@ anims/pic = SubResource( 6 )
 anims/up = SubResource( 7 )
 
 [node name="ProfilePage" type="TextureRect" parent="."]
-editor/display_folded = true
 margin_left = 768.0
 margin_top = 192.0
 margin_right = 1226.0

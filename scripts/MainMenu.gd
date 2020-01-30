@@ -34,10 +34,11 @@ func _on_Profile_toggled(button_pressed):
 	$ProfilePage/Scores.text = text
 
 func _on_NovoJogo_toggled(button_pressed):
-	if $NovoJogo.get_draw_mode() == 0:
-		$PickLevel/AnimationPlayer.play("up")
-	else:
-		$PickLevel/AnimationPlayer.play_backwards("up")
+	get_tree().change_scene("res://scenes/Grid.tscn")
+#	if $NovoJogo.get_draw_mode() == 0:
+#		$PickLevel/AnimationPlayer.play("up")
+#	else:
+#		$PickLevel/AnimationPlayer.play_backwards("up")
 
 func _on_Button_pressed():
 	Level.current_lvl = 0

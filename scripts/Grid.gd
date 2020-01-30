@@ -1,3 +1,4 @@
+tool
 extends TileMap
 
 var side = Level.side_size 
@@ -12,6 +13,7 @@ func _ready():
 #	print(Level.current_lvl, side)
 
 	generate_frame()
+	print(get_cell(6,0))
 	$"../MovesLeft".set_text(str(Level.move_limit))
 	if Level.tile_position.empty():
 		tile_position = random_str(side)
@@ -21,11 +23,13 @@ func _ready():
 	call_deferred("load_tiles")
 
 func generate_frame():
-	for i in range (-1, side + 2):
-		set_cell(i, -1, 5)
-		set_cell(i, side, 5)
-		set_cell(0, i - 1, 5)
-		set_cell(side + 1, i - 1, 5)
+	var cell_sprite
+	cell_sprite = 6
+	for i in range (0, side):
+		set_cell(i+1, 0, 11)
+		set_cell(i+1, side + 1, 12)
+		set_cell(0, i+1, 9)
+		set_cell(side + 1, i+1, 10)
 		
 func load_tiles():
 	var tile = preload("res://scenes/Tile.tscn")
