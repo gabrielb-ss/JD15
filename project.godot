@@ -15,44 +15,25 @@ _global_script_class_icons={
 
 [application]
 
-config/name="jogoPRS"
+config/name="JD15"
 run/main_scene="res://src/Scenes/Login.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Level="*res://src/Scenes/Level.tscn"
-PlayerInfo="*res://src/Scenes/PlayerInfo.tscn"
+Level="*res://src/Shared/Level.gd"
+PlayerInfo="*res://src/Shared/PlayerInfo.gd"
+BgControl="*res://src/Shared/BgControl.gd"
 
 [display]
 
 window/size/width=768
 window/size/height=768
-window/size/always_on_top=true
-window/energy_saving/keep_screen_on=false
 window/handheld/orientation="portrait"
+window/ios/hide_home_indicator=false
 window/stretch/mode="2d"
-window/stretch/aspect="keep"
+window/stretch/aspect="keep_height"
 
-[input]
+[rendering]
 
-shoot={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
- ]
-}
-golf={
-"deadzone": 0.5,
-"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
- ]
-}
-rotate_left={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
- ]
-}
-rotate_right={
-"deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"unicode":0,"echo":false,"script":null)
- ]
-}
+environment/default_environment="res://default_env.tres"

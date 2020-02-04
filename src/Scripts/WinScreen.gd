@@ -41,7 +41,7 @@ func _ready():
 	Level.reset_match(0)
 	
 func _on_menu_pressed():
-	get_tree().change_scene("res://src/scenes/MainMenu.tscn")
+	get_tree().change_scene("res://src/Scenes/MainMenu.tscn")
 
 func _on_NextLevel_pressed():
-	get_tree().change_scene("res://src/scenes/Grid.tscn")
+	get_tree().change_scene("res://src/Scenes/GameScreen.tscn")

@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/Scripts/DefeatScreen.gd" type="Script" id=1]
-[ext_resource path="res://assets/images/Solid_black.png" type="Texture" id=2]
 [ext_resource path="res://fonts/04B_30__.TTF" type="DynamicFontData" id=3]
-[ext_resource path="res://assets/icons/redo.png" type="Texture" id=4]
-[ext_resource path="res://assets/icons/menu.png" type="Texture" id=5]
+[ext_resource path="res://assets/icons/black_icons/redo.png" type="Texture" id=4]
+[ext_resource path="res://assets/icons/black_icons/menu.png" type="Texture" id=5]
 [ext_resource path="res://assets/fonts/WhiteOutlines-3mGp.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://src/Scenes/GlobalBg.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -22,28 +22,28 @@ font_data = ExtResource( 6 )
 [node name="DefeatScreen" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 384, 384 )
-scale = Vector2( 3.84, 3.84 )
-texture = ExtResource( 2 )
+[node name="GlobalBg" parent="." instance=ExtResource( 7 )]
 
 [node name="Again" type="Button" parent="."]
-margin_left = 655.0
-margin_top = 640.0
-margin_right = 767.0
-margin_bottom = 746.0
+margin_left = 624.0
+margin_top = 624.0
+margin_right = 764.0
+margin_bottom = 758.0
 custom_fonts/font = SubResource( 1 )
 icon = ExtResource( 4 )
 flat = true
 
 [node name="Menu" type="Button" parent="."]
-margin_top = 640.0
-margin_right = 112.0
-margin_bottom = 746.0
+margin_top = 624.0
+margin_right = 140.0
+margin_bottom = 758.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
 icon = ExtResource( 5 )
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_top = 320.0
@@ -51,5 +51,8 @@ margin_right = 768.0
 margin_bottom = 448.0
 custom_fonts/normal_font = SubResource( 3 )
 text = "TENTE NOVAMENTE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Again" to="." method="_on_Again_pressed"]
 [connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]

@@ -9,4 +9,3 @@ func _on_Timer_timeout():
 	if Level.time_limit < 1 or Level.move_limit < 1:
 		get_tree().change_scene("res://scenes/DefeatScreen.tscn")
 		pass
-

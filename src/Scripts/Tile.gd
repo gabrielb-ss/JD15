@@ -1,4 +1,3 @@
-#tool
 extends KinematicBody2D
 
 onready var tween = $Tween
@@ -16,16 +15,16 @@ func _on_Tile_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index==BUTTON_LEFT:
 		$Click.play()
 		if try_move(Vector2.RIGHT*128):
-			get_parent().set_tile_position(tile_sprite, get_tile_pos(Vector2.RIGHT),get_parent().world_to_map(position))
+			$"/root/GameScreen/Game".set_tile_position(tile_sprite, get_tile_pos(Vector2.RIGHT),get_parent().world_to_map(position))
 			return
 		if try_move(Vector2.DOWN*128): 
-			get_parent().set_tile_position(tile_sprite, get_tile_pos(Vector2.DOWN), get_parent().world_to_map(position))
+			$"/root/GameScreen/Game".set_tile_position(tile_sprite, get_tile_pos(Vector2.DOWN), get_parent().world_to_map(position))
 			return
 		if try_move(Vector2.LEFT*128): 
-			get_parent().set_tile_position(tile_sprite, get_tile_pos(Vector2.LEFT),get_parent().world_to_map(position))
+			$"/root/GameScreen/Game".set_tile_position(tile_sprite, get_tile_pos(Vector2.LEFT),get_parent().world_to_map(position))
 			return
 		if try_move(Vector2.UP*128): 
-			get_parent().set_tile_position(tile_sprite, get_tile_pos(Vector2.UP),get_parent().world_to_map(position))
+			$"/root/GameScreen/Game".set_tile_position(tile_sprite, get_tile_pos(Vector2.UP),get_parent().world_to_map(position))
 			return
 
 func try_move(rel_vec):

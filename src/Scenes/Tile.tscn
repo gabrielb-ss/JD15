@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://src/Scripts/Tile.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/neon alphabet/n.png" type="Texture" id=2]
@@ -17,89 +17,102 @@
 [ext_resource path="res://assets/sprites/neon alphabet/K.png" type="Texture" id=15]
 [ext_resource path="res://assets/sprites/neon alphabet/F.png" type="Texture" id=16]
 [ext_resource path="res://assets/sounds/click.ogg" type="AudioStream" id=17]
-
-
+[ext_resource path="res://assets/sprites/numbers/01.jpg" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/numbers/08.jpg" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/numbers/06.jpg" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/numbers/05.jpg" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/numbers/02.jpg" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/numbers/07.jpg" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/numbers/03.jpg" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/numbers/04.jpg" type="Texture" id=25]
+[ext_resource path="res://assets/sprites/numbers/09.jpg" type="Texture" id=26]
+[ext_resource path="res://assets/sprites/numbers/12.jpg" type="Texture" id=27]
+[ext_resource path="res://assets/sprites/numbers/11.jpg" type="Texture" id=28]
+[ext_resource path="res://assets/sprites/numbers/13.jpg" type="Texture" id=29]
+[ext_resource path="res://assets/sprites/numbers/15.jpg" type="Texture" id=30]
+[ext_resource path="res://assets/sprites/numbers/10.jpg" type="Texture" id=31]
+[ext_resource path="res://assets/sprites/numbers/14.jpg" type="Texture" id=32]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 26 ) ],
+"loop": false,
+"name": "I",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 20 ) ],
+"loop": false,
+"name": "F",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 28 ) ],
+"loop": false,
+"name": "K",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 27 ) ],
+"loop": false,
+"name": "L",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 21 ) ],
+"loop": false,
+"name": "E",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 32 ) ],
+"loop": false,
+"name": "N",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "P",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "C",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
-"name": "E",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "H",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "M",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "B",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "D",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 14 ) ],
-"loop": true,
-"name": "I",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "L",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "F",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ) ],
-"loop": false,
-"name": "A",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 30 ) ],
 "loop": false,
 "name": "O",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "N",
+"frames": [ ExtResource( 4 ), ExtResource( 19 ) ],
+"loop": false,
+"name": "H",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "G",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
+"frames": [ ExtResource( 9 ), ExtResource( 31 ) ],
+"loop": false,
 "name": "J",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 15 ) ],
-"loop": true,
-"name": "K",
+"frames": [ ExtResource( 3 ), ExtResource( 24 ) ],
+"loop": false,
+"name": "C",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 29 ) ],
+"loop": false,
+"name": "M",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 23 ) ],
+"loop": false,
+"name": "G",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 25 ) ],
+"loop": false,
+"name": "D",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 18 ) ],
+"loop": false,
+"name": "A",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 22 ) ],
+"loop": false,
+"name": "B",
 "speed": 5.0
 } ]
 
@@ -114,6 +127,7 @@ script = ExtResource( 1 )
 position = Vector2( 64, 64 )
 frames = SubResource( 1 )
 animation = "B"
+speed_scale = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 64, 64 )
@@ -121,6 +135,6 @@ shape = SubResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="Click" type="AudioStreamPlayer2D" parent="."]
+[node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
 [connection signal="input_event" from="." to="." method="_on_Tile_input_event"]

@@ -1,24 +1,23 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/Scripts/WinScreen.gd" type="Script" id=1]
-[ext_resource path="res://assets/images/Solid_black.png" type="Texture" id=2]
-[ext_resource path="res://assets/fonts/WhiteOutlines-3mGp.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://fonts/04B_30__.TTF" type="DynamicFontData" id=4]
-[ext_resource path="res://assets/icons/menu.png" type="Texture" id=5]
-[ext_resource path="res://assets/icons/forward.png" type="Texture" id=6]
+[ext_resource path="res://assets/fonts/WhiteOutlines-3mGp.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/icons/black_icons/menu.png" type="Texture" id=5]
+[ext_resource path="res://assets/icons/black_icons/right-arrow.png" type="Texture" id=6]
 [ext_resource path="res://assets/sounds/woow.ogg" type="AudioStream" id=7]
+[ext_resource path="res://src/Scenes/GlobalBg.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 73
-font_data = ExtResource( 3 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 70
-font_data = ExtResource( 3 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 70
-font_data = ExtResource( 3 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 30
@@ -31,7 +30,7 @@ font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 70
-font_data = ExtResource( 3 )
+font_data = ExtResource( 4 )
 
 [node name="WinScreen" type="Node2D"]
 script = ExtResource( 1 )
@@ -39,13 +38,7 @@ __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
 
-[node name="Solid_black" type="Sprite" parent="."]
-position = Vector2( 384, 384 )
-scale = Vector2( 3.84, 3.84 )
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="BackgroundControl" parent="." instance=ExtResource( 8 )]
 
 [node name="Level" type="RichTextLabel" parent="."]
 margin_left = 256.0
@@ -79,20 +72,23 @@ text = "Jogadas
 scroll_active = false
 
 [node name="Menu" type="Button" parent="."]
-margin_top = 640.0
-margin_right = 112.0
-margin_bottom = 746.0
+margin_top = 624.0
+margin_right = 140.0
+margin_bottom = 758.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_disabled = Color( 0.996078, 0.996078, 0.996078, 1 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 icon = ExtResource( 5 )
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="NextLevel" type="Button" parent="."]
-margin_left = 655.0
-margin_top = 640.0
-margin_right = 767.0
-margin_bottom = 746.0
+margin_left = 624.0
+margin_top = 624.0
+margin_right = 764.0
+margin_bottom = 758.0
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
@@ -100,9 +96,9 @@ custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
 icon = ExtResource( 6 )
 flat = true
-
-[node name="Wow" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TimeR" type="RichTextLabel" parent="."]
 margin_left = 448.0
@@ -110,7 +106,7 @@ margin_top = 183.0
 margin_right = 767.0
 margin_bottom = 352.0
 custom_fonts/normal_font = SubResource( 6 )
-custom_colors/default_color = Color( 1, 0, 0, 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Recorde
 100"
 scroll_active = false
@@ -121,10 +117,16 @@ margin_top = 384.0
 margin_right = 767.0
 margin_bottom = 528.0
 custom_fonts/normal_font = SubResource( 6 )
-custom_colors/default_color = Color( 1, 0, 0, 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Recorde
 100
 "
 scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wow" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
 [connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="NextLevel" to="." method="_on_NextLevel_pressed"]

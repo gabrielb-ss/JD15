@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/images/madeira.jpg" type="Texture" id=3]
+
+[node name="GlobalBg" type="Control"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 528.715, 521.493 )
+scale = Vector2( 1.37542, 1.20904 )
+texture = ExtResource( 3 )
+flip_v = true

@@ -1,4 +1,4 @@
-extends TileMap
+extends Control
 
 var side = Level.side_size 
 var dimention = side * side
@@ -8,37 +8,36 @@ var tile_position = ""
 
 func _ready():
 	Level.load_game()
-	$"../Level".set_text("Level " + str(Level.current_lvl + 1))
-	if side == 3: self.position = Vector2(64,0)
-#	print(Level.current_lvl, side)
-
+	$Level.set_text("Level " + str(Level.current_lvl + 1))
+	$MovesLeft.set_text(str(Level.move_limit))
+	if side == 3: $Grid.position = Vector2(64,0)
 	generate_frame()
-	$"../MovesLeft".set_text(str(Level.move_limit))
+	
 	if Level.tile_position.empty():
 		tile_position = random_str(side)
 	else:
 		tile_position = Level.tile_position
-	#tile_position = "A"
+
 	call_deferred("load_tiles")
 
 func generate_frame():
 	var cell_sprite
 	cell_sprite = 6
 	for i in range (0, side):
-		set_cell(i+1, 0, 11)
-		set_cell(i+1, side + 1, 12)
-		set_cell(0, i+1, 9)
-		set_cell(side + 1, i+1, 10)
+		$Grid.set_cell(i+1, 0, 11)
+		$Grid.set_cell(i+1, side + 1, 12)
+		$Grid.set_cell(0, i+1, 9)
+		$Grid.set_cell(side + 1, i+1, 10)
 		
 func load_tiles():
-	var tile = preload("res://src/scenes/Tile.tscn")
+	var tile = preload("res://src/Scenes/Tile.tscn")
 	var vec2 = Vector2(1,1)
 	for i in tile_position:
 		if  i != "-":
 			var newt = tile.instance()
 			newt.tile_sprite = i
-			newt.position = (map_to_world(vec2))
-			self.add_child(newt)
+			newt.position = ($Grid.map_to_world(vec2))
+			$Grid.add_child(newt)
 #
 		if vec2.x == side:
 			vec2.y += 1
@@ -70,7 +69,7 @@ func random_str(var side):
 func set_tile_position(var t_sprite, var new_pos, var old_pos):
 	var translated
 	Level.move_limit -= 1
-	$"../MovesLeft".set_text(str(Level.move_limit))
+	$MovesLeft.set_text(str(Level.move_limit))
 	
 	translated = translate(old_pos)
 	tile_position[translated] = "-"
@@ -80,7 +79,7 @@ func set_tile_position(var t_sprite, var new_pos, var old_pos):
 #	print(t_sprite, " ", old_pos, " ", new_pos, " ", translated)
 	Level.tile_position = tile_position
 #	print(tile_position)
-	is_win()	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+	is_win()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 
 func translate(v2):
 	var trans = v2.x - 1 + side * (v2.y - 1)
@@ -88,24 +87,24 @@ func translate(v2):
 	
 func is_win():
 	if Level.tile_position == "ABCDEFGH-" or Level.tile_position == "ABCDEFGHIJKLMNO-":
-		get_tree().change_scene("res://src/scenes/WinScreen.tscn")
+		get_tree().change_scene("res://src/Scenes/WinScreen.tscn")
 
 func _on_Reset_pressed():
 	print(Level.current_lvl)
 	Level.reset_match(1)
-	get_tree().change_scene("res://src/scenes/Grid.tscn")
+	get_tree().change_scene("res://src/Scenes/GameScreen.tscn")
 	
 
 func _on_Menu_pressed():
 	Level.reset_match(0)
-	get_tree().change_scene("res://src/scenes/MainMenu.tscn")
+	get_tree().change_scene("res://src/Scenes/MainMenu.tscn")
 	
 func _process(delta):
-	$"../Timer".set_text(str(Level.time_limit))
+	$Timer.set_text(str(Level.time_limit))
 
 func _on_Timer_timeout():
 	Level.save_game()
 	Level.time_limit -= 1
 	if Level.time_limit < 1 or Level.move_limit < 1:
-		get_tree().change_scene("res://scenes/DefeatScreen.tscn")
+		get_tree().change_scene("res://src/Scenes/DefeatScreen.tscn")
 		pass

@@ -4,7 +4,7 @@ var username = ""
 var scores_time = []
 var scores_move = []
 var max_lvl = -1
-const path = "res://player.jason"
+const path = "user://player.jason"
 
 func _ready():
 	scores_time.resize(Level.level_info.size())
