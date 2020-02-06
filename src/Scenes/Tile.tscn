@@ -1,21 +1,6 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://src/Scripts/Tile.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/neon alphabet/n.png" type="Texture" id=2]
-[ext_resource path="res://assets/sprites/neon alphabet/C.png" type="Texture" id=3]
-[ext_resource path="res://assets/sprites/neon alphabet/H.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/neon alphabet/M.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprites/neon alphabet/G.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprites/neon alphabet/o.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprites/neon alphabet/L.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprites/neon alphabet/J.png" type="Texture" id=9]
-[ext_resource path="res://assets/sprites/neon alphabet/D.png" type="Texture" id=10]
-[ext_resource path="res://assets/sprites/neon alphabet/E.png" type="Texture" id=11]
-[ext_resource path="res://assets/sprites/neon alphabet/A.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprites/neon alphabet/B.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprites/neon alphabet/I.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprites/neon alphabet/K.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprites/neon alphabet/F.png" type="Texture" id=16]
 [ext_resource path="res://assets/sounds/click.ogg" type="AudioStream" id=17]
 [ext_resource path="res://assets/sprites/numbers/01.jpg" type="Texture" id=18]
 [ext_resource path="res://assets/sprites/numbers/08.jpg" type="Texture" id=19]
@@ -35,82 +20,82 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 14 ), ExtResource( 26 ) ],
-"loop": false,
-"name": "I",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 16 ), ExtResource( 20 ) ],
-"loop": false,
-"name": "F",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ), ExtResource( 28 ) ],
-"loop": false,
-"name": "K",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 27 ) ],
-"loop": false,
-"name": "L",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 21 ) ],
-"loop": false,
-"name": "E",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 2 ), ExtResource( 32 ) ],
+"frames": [ ExtResource( 32 ) ],
 "loop": false,
 "name": "N",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "P",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ), ExtResource( 30 ) ],
+"frames": [ ExtResource( 20 ) ],
 "loop": false,
-"name": "O",
+"name": "F",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 19 ) ],
-"loop": false,
-"name": "H",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ), ExtResource( 31 ) ],
+"frames": [ ExtResource( 31 ) ],
 "loop": false,
 "name": "J",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 24 ) ],
-"loop": false,
-"name": "C",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 29 ) ],
+"frames": [ ExtResource( 29 ) ],
 "loop": false,
 "name": "M",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 23 ) ],
+"frames": [  ],
+"loop": true,
+"name": "P",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ) ],
 "loop": false,
 "name": "G",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 25 ) ],
+"frames": [ ExtResource( 25 ) ],
 "loop": false,
 "name": "D",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 18 ) ],
+"frames": [ ExtResource( 28 ) ],
+"loop": false,
+"name": "K",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ) ],
+"loop": false,
+"name": "L",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": false,
+"name": "C",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ) ],
+"loop": false,
+"name": "I",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": false,
+"name": "E",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 30 ) ],
+"loop": false,
+"name": "O",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": false,
+"name": "H",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
 "loop": false,
 "name": "A",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 22 ) ],
+"frames": [ ExtResource( 22 ) ],
 "loop": false,
 "name": "B",
 "speed": 5.0
@@ -127,7 +112,6 @@ script = ExtResource( 1 )
 position = Vector2( 64, 64 )
 frames = SubResource( 1 )
 animation = "B"
-speed_scale = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 64, 64 )
@@ -137,4 +121,5 @@ shape = SubResource( 2 )
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
+volume_db = -10.0
 [connection signal="input_event" from="." to="." method="_on_Tile_input_event"]

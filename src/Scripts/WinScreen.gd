@@ -2,7 +2,6 @@ tool
 extends Node2D
 
 func _ready():
-	print(PlayerInfo.scores_time)
 	var time = Level.level_info[Level.current_lvl][1] - Level.time_limit
 	var moves = Level.level_info[Level.current_lvl][2] - Level.move_limit
 	
@@ -15,10 +14,9 @@ func _ready():
 	elif time == PlayerInfo.scores_time[Level.current_lvl] and moves < PlayerInfo.scores_time[Level.current_lvl]:
 		PlayerInfo.scores_move[Level.current_lvl] = moves
 			
-	print(PlayerInfo.scores_time, "\n", PlayerInfo.scores_move)
 	
-	if Level.current_lvl > PlayerInfo.max_lvl:
-		PlayerInfo.max_lvl = Level.current_lvl
+	if Level.current_lvl >= PlayerInfo.max_lvl:
+		PlayerInfo.max_lvl = Level.current_lvl + 1
 		
 	PlayerInfo.save_player()
 	$TimeR.text = "Recorde\n" + str(PlayerInfo.scores_time[Level.current_lvl])
@@ -28,7 +26,6 @@ func _ready():
 	$Level.text = prompt
 	prompt = "Tempo\n" + str(time)
 	$Time.text = prompt
-	#$Time.add_color_override("default_color", Color("#FF0000"))
 	prompt = "Jogadas\n" + str(moves)
 	$Moves.text = prompt
 	

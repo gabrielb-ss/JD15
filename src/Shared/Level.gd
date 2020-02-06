@@ -7,8 +7,11 @@ var side_size = level_info[current_lvl][0]
 var time_limit = level_info[current_lvl][1]
 var move_limit = level_info[current_lvl][2]
 var tile_position = ""
+var max_time = 0
 
-
+func _ready():
+	for i in level_info:
+		max_time += i[1]
 
 func save_game():
 	var save_game = File.new()
@@ -21,7 +24,6 @@ func save_game():
 	save_game.open(save_path, File.WRITE)
 	save_game.store_line(to_json(save_dict))
 	save_game.close()
-	#print(save_dict)
 	
 func load_game():
 	var save_game = File.new()
@@ -39,8 +41,6 @@ func load_game():
 		return current_lvl
 	else:
 		return 0
-
-		#print(tile_position)
 
 func reset_match(var flag):
 	if flag == 1: 

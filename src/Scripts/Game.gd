@@ -63,7 +63,6 @@ func random_str(var side):
 			sprites4x4.erase(sprites4x4[idx])
 #
 	r_str += "-"
-	#print(r_str)
 	return r_str
 
 func set_tile_position(var t_sprite, var new_pos, var old_pos):
@@ -76,9 +75,7 @@ func set_tile_position(var t_sprite, var new_pos, var old_pos):
 
 	translated = translate(new_pos)
 	tile_position[translated] = t_sprite
-#	print(t_sprite, " ", old_pos, " ", new_pos, " ", translated)
 	Level.tile_position = tile_position
-#	print(tile_position)
 	is_win()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 
 func translate(v2):
@@ -90,7 +87,6 @@ func is_win():
 		get_tree().change_scene("res://src/Scenes/WinScreen.tscn")
 
 func _on_Reset_pressed():
-	print(Level.current_lvl)
 	Level.reset_match(1)
 	get_tree().change_scene("res://src/Scenes/GameScreen.tscn")
 	
@@ -107,4 +103,3 @@ func _on_Timer_timeout():
 	Level.time_limit -= 1
 	if Level.time_limit < 1 or Level.move_limit < 1:
 		get_tree().change_scene("res://src/Scenes/DefeatScreen.tscn")
-		pass

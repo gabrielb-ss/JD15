@@ -70,6 +70,9 @@ custom_fonts/normal_font = SubResource( 3 )
 text = "Jogadas
 100"
 scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Menu" type="Button" parent="."]
 margin_top = 624.0
@@ -110,6 +113,9 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Recorde
 100"
 scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MovesR" type="RichTextLabel" parent="."]
 margin_left = 448.0
@@ -128,5 +134,6 @@ __meta__ = {
 
 [node name="Wow" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+volume_db = -15.0
 [connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="NextLevel" to="." method="_on_NextLevel_pressed"]

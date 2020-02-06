@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/Scripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://src/Scenes/GlobalBg.tscn" type="PackedScene" id=2]
@@ -13,7 +13,7 @@
 size = 99
 font_data = ExtResource( 6 )
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=2]
 resource_name = "BASE"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -28,7 +28,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 768 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=3]
 resource_name = "UP"
 length = 0.5
 tracks/0/type = "value"
@@ -84,36 +84,6 @@ tracks/0/keys = {
 [sub_resource type="DynamicFont" id=8]
 size = 70
 font_data = ExtResource( 6 )
-
-[sub_resource type="Animation" id=9]
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 263.716, 768 ) ]
-}
-
-[sub_resource type="Animation" id=10]
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 263.716, 768 ), Vector2( 267.574, 557 ) ]
-}
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 1 )
@@ -181,13 +151,13 @@ icon = ExtResource( 3 )
 flat = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ConfigButtons"]
-anims/BASE = SubResource( 11 )
-anims/UP = SubResource( 12 )
+anims/BASE = SubResource( 2 )
+anims/UP = SubResource( 3 )
 
 [node name="NovoJogo" type="Button" parent="."]
-margin_left = 320.0
+margin_left = 314.0
 margin_top = 624.0
-margin_right = 460.0
+margin_right = 454.0
 margin_bottom = 758.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -224,7 +194,7 @@ __meta__ = {
 margin_left = 6.0
 margin_top = 3.0
 margin_right = 458.0
-margin_bottom = 365.0
+margin_bottom = 448.0
 custom_fonts/normal_font = SubResource( 5 )
 text = "Gabriel
 lvl 1:
@@ -233,7 +203,7 @@ lvl3:
 lvl4:
 lvl:5"
 __meta__ = {
-"_edit_lock_": true
+"_edit_use_anchors_": false
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ProfilePage"]
@@ -241,19 +211,21 @@ anims/profile = SubResource( 6 )
 "anims/profile slide left" = SubResource( 7 )
 
 [node name="PickLevel" type="HBoxContainer" parent="."]
-visible = false
-margin_left = 234.0
-margin_top = 768.0
-margin_right = 526.0
-margin_bottom = 848.0
+margin_left = 239.0
+margin_top = 512.0
+margin_right = 563.0
+margin_bottom = 592.0
 rect_scale = Vector2( 0.96452, 0.761261 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VSeparator" type="VSeparator" parent="PickLevel"]
 visible = false
 margin_right = 4.0
 margin_bottom = 80.0
 
-[node name="Button" type="Button" parent="PickLevel"]
+[node name="B1" type="Button" parent="PickLevel"]
 margin_right = 42.0
 margin_bottom = 80.0
 custom_fonts/font = SubResource( 8 )
@@ -264,17 +236,13 @@ __meta__ = {
 }
 
 [node name="VSeparator6" type="VSeparator" parent="PickLevel"]
-visible = false
-margin_left = 54.0
-margin_right = 58.0
-margin_bottom = 80.0
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Button2" type="Button" parent="PickLevel"]
 margin_left = 46.0
-margin_right = 99.0
+margin_right = 50.0
+margin_bottom = 80.0
+
+[node name="B2" type="Button" parent="PickLevel"]
+margin_left = 54.0
+margin_right = 107.0
 margin_bottom = 80.0
 custom_fonts/font = SubResource( 8 )
 text = "2"
@@ -284,17 +252,13 @@ __meta__ = {
 }
 
 [node name="VSeparator2" type="VSeparator" parent="PickLevel"]
-visible = false
 margin_left = 111.0
 margin_right = 115.0
 margin_bottom = 80.0
-__meta__ = {
-"_edit_lock_": true
-}
 
-[node name="Button3" type="Button" parent="PickLevel"]
-margin_left = 103.0
-margin_right = 158.0
+[node name="B3" type="Button" parent="PickLevel"]
+margin_left = 119.0
+margin_right = 174.0
 margin_bottom = 80.0
 custom_fonts/font = SubResource( 8 )
 text = "3"
@@ -304,17 +268,13 @@ __meta__ = {
 }
 
 [node name="VSeparator3" type="VSeparator" parent="PickLevel"]
-visible = false
-margin_left = 119.0
-margin_right = 123.0
+margin_left = 178.0
+margin_right = 182.0
 margin_bottom = 80.0
-__meta__ = {
-"_edit_lock_": true
-}
 
-[node name="Button4" type="Button" parent="PickLevel"]
-margin_left = 162.0
-margin_right = 217.0
+[node name="B4" type="Button" parent="PickLevel"]
+margin_left = 186.0
+margin_right = 241.0
 margin_bottom = 80.0
 custom_fonts/font = SubResource( 8 )
 text = "4"
@@ -324,17 +284,13 @@ __meta__ = {
 }
 
 [node name="VSeparator4" type="VSeparator" parent="PickLevel"]
-visible = false
-margin_left = 178.0
-margin_right = 182.0
+margin_left = 245.0
+margin_right = 249.0
 margin_bottom = 80.0
-__meta__ = {
-"_edit_lock_": true
-}
 
-[node name="Button5" type="Button" parent="PickLevel"]
-margin_left = 221.0
-margin_right = 276.0
+[node name="B5" type="Button" parent="PickLevel"]
+margin_left = 253.0
+margin_right = 308.0
 margin_bottom = 80.0
 custom_fonts/font = SubResource( 8 )
 text = "5"
@@ -345,25 +301,18 @@ __meta__ = {
 
 [node name="VSeparator5" type="VSeparator" parent="PickLevel"]
 visible = false
-margin_left = 237.0
-margin_right = 241.0
+margin_left = 320.0
+margin_right = 324.0
 margin_bottom = 80.0
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PickLevel"]
-anims/pic = SubResource( 9 )
-anims/up = SubResource( 10 )
 [connection signal="toggled" from="Config" to="." method="_on_Config_toggled"]
 [connection signal="pressed" from="ConfigButtons/TrashCan" to="." method="_on_TrashCan_pressed"]
 [connection signal="button_down" from="ConfigButtons/Mute" to="." method="_on_Mute_button_down"]
 [connection signal="button_up" from="ConfigButtons/Mute" to="." method="_on_Mute_button_up"]
 [connection signal="toggled" from="ConfigButtons/Mute" to="." method="_on_Mute_toggled"]
-[connection signal="pressed" from="NovoJogo" to="." method="_on_NovoJogo_pressed"]
+[connection signal="toggled" from="NovoJogo" to="." method="_on_NovoJogo_toggled"]
 [connection signal="toggled" from="Profile" to="." method="_on_Profile_toggled"]
-[connection signal="pressed" from="PickLevel/Button" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="PickLevel/Button2" to="." method="_on_Button2_pressed"]
-[connection signal="pressed" from="PickLevel/Button3" to="." method="_on_Button3_pressed"]
-[connection signal="pressed" from="PickLevel/Button4" to="." method="_on_Button4_pressed"]
-[connection signal="pressed" from="PickLevel/Button5" to="." method="_on_Button5_pressed"]
+[connection signal="pressed" from="PickLevel/B1" to="." method="_on_B1_pressed"]
+[connection signal="pressed" from="PickLevel/B2" to="." method="_on_B2_pressed"]
+[connection signal="pressed" from="PickLevel/B3" to="." method="_on_B3_pressed"]
+[connection signal="pressed" from="PickLevel/B4" to="." method="_on_B4_pressed"]
+[connection signal="pressed" from="PickLevel/B5" to="." method="_on_B5_pressed"]
