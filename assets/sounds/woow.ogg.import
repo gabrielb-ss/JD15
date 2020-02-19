@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/woow.ogg-da9b1c18bca3fcdfb7cd9cc2fbc05c83.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/woow.ogg"
+dest_files=[ "res://.import/woow.ogg-da9b1c18bca3fcdfb7cd9cc2fbc05c83.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

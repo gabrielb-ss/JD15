@@ -1,12 +1,27 @@
 extends KinematicBody2D
 
 onready var tween = $Tween
-onready var sprite = $Sprite
 var tile_sprite
 
 func _ready():
-	sprite.play(tile_sprite)
-	
+	match int(Level.current_lvl):
+		0:
+			$Lv1.show()
+			$Lv1.play(tile_sprite)
+		1: 
+			$Lv2.show()
+			$Lv2.play(tile_sprite)
+		2:
+			$Lv3.show()
+			$Lv3.play(tile_sprite)
+		3:
+			$Lv4.show()
+			$Lv4.play(tile_sprite)
+		4:
+			$Lv5.show()
+			$Lv5.play(tile_sprite)
+			
+			
 func get_tile_pos(var v2):
 	v2 = v2 + get_parent().world_to_map(position)
 	return v2

@@ -33,6 +33,7 @@ func load_tiles():
 	var tile = preload("res://src/Scenes/Tile.tscn")
 	var vec2 = Vector2(1,1)
 	for i in tile_position:
+		yield(get_tree().create_timer(0.05), "timeout")
 		if  i != "-":
 			var newt = tile.instance()
 			newt.tile_sprite = i
@@ -84,6 +85,7 @@ func translate(v2):
 	
 func is_win():
 	if Level.tile_position == "ABCDEFGH-" or Level.tile_position == "ABCDEFGHIJKLMNO-":
+		yield(get_tree().create_timer(1.0), "timeout")
 		get_tree().change_scene("res://src/Scenes/WinScreen.tscn")
 
 func _on_Reset_pressed():
