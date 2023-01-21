@@ -5,7 +5,7 @@ var scores_time = []
 var scores_move = []
 var max_lvl = 0
 var score
-const path = "res://player.jason"
+const path = "res://player.json"
 
 func _ready():
 	scores_time.resize(Level.level_info.size())
