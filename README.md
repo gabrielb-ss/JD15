@@ -22,9 +22,10 @@ https://user-images.githubusercontent.com/59917720/213888580-03920b63-1f95-4e9f-
 # 🔧 Features
 * Profile with best scores and times for each level
 * 5 levels of increasing difficulty
-* Mute music option
 * Reset best scores option
+* Mute music option
 * Shuffle pieces
+* Local save
 
 # ❓ How to play
 The game has the same principles and rules as the traditional 15 puzzle game, but you have a distinct time and move limit for each level.
