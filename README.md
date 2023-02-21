@@ -1,6 +1,4 @@
-<font size="7"><p align="center">
- 🧩 15 PUZZLE GAME 🕹
-</p></font>
+# <p align="center">🧩 15 PUZZLE GAME 🕹</p>
 
 <p align="center">	
    <a href="https://www.linkedin.com/in/gabrielbss/">
@@ -11,9 +9,7 @@
   </a>
 </p>
 
-<p align="center">
-  15 puzzle game made using Godot Engine.
-</p>
+## <p align="center">15 puzzle game made using Godot Engine.</p>
 
 https://user-images.githubusercontent.com/59917720/213888570-29a10529-99f3-4359-a1d5-b84805241e1a.mp4
 
